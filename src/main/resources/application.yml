@@ -3,7 +3,7 @@ spring:
     name: ECommerceApplication
     #  DataSource configuration
   datasource:
-    url: jdbc:mysql://localhost:3306/ecommerce project_db?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/ecommerce_db?createDatabaseIfNotExist=true
     username: root
     password: root
   #      driver-class-name: com.mysql.cj.jdbc.Driver
@@ -27,3 +27,17 @@ spring:
           starttls:
             enable: true
             required: true
+# application configuration
+# Application Custom configuration    (3600000 = 1hour and 1296000000 = 15days) in milli
+# (3600 = 1hour and 1296000 = 15days) in seconds           
+application:
+   jwt:
+      seceret: ${jwt.secret} 
+      access_expiry_seconds: 3600  
+      refresh_expiry_seconds: 10800
+   cookie:
+      domain: localhost
+      same-site: Lax
+      secure: false
+      
+     

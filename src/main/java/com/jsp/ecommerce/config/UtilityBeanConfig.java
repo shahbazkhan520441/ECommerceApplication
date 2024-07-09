@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class UtilityBeanConfig {
     @Bean
-	public Random createOtp() {
+	 Random random() {
     	return new SecureRandom();
 	   
 	}

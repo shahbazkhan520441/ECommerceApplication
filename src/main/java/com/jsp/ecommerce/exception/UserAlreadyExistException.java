@@ -6,6 +6,6 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class UserAlreadyExistException extends RuntimeException {
-	String message;
+private	String message;
 
 }
