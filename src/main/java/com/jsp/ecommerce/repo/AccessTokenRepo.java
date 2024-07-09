@@ -1,5 +1,6 @@
 package com.jsp.ecommerce.repo;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,4 +17,6 @@ public interface AccessTokenRepo extends JpaRepository<AccessToken, Integer> {
 
 	List<AccessToken> findByUserAndIsBlocked(User user,boolean isBlocked);
 	List<AccessToken> findByUserAndIsBlockedAndTokenNot(User user,boolean isBlocked,String accesstoken);
+
+	List<AccessToken> findByExpirationBefore(LocalDateTime now);
 }
