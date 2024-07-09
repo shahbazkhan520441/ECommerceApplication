@@ -1,6 +1,5 @@
 package com.jsp.ecommerce.entity;
 
-import com.google.common.cache.Cache;
 import com.jsp.ecommerce.enums.UserRole;
 
 import jakarta.persistence.Entity;

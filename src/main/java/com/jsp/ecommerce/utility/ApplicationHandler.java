@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class ApplicationHandler {
-	
+
 	@SuppressWarnings("unused")
 	private ResponseEntity<ErrorStructure<String>> errorResponse(HttpStatus status, String message, 
 			String rootCause){
@@ -43,6 +43,11 @@ public class ApplicationHandler {
 						.setStatus(HttpStatus.BAD_REQUEST.value())
 						.setMessage("invalid input")
 						.setRootCause(allErrors));
+	}
+	
+	@ExceptionHandler
+	public ResponseEntity<ErrorStructure<String>> InvalidJwtException(com.jsp.ecommerce.exception.InvalidJwtException ex){
+		return  errorResponse(HttpStatus.BAD_REQUEST, ex.getMessage(), "invalid jwt token ");
 	}
 
 }

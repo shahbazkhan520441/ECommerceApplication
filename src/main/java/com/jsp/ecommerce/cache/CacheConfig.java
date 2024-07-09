@@ -13,18 +13,18 @@ public class CacheConfig {
 	@Bean
 	public Cache<String, String> otpCache(){
 		return	CacheBuilder.newBuilder()
-		.expireAfterWrite(Duration.ofMinutes(5))
-		.concurrencyLevel(Runtime.getRuntime().availableProcessors()).build();
-		 
-		
+				.expireAfterWrite(Duration.ofMinutes(5))
+				.concurrencyLevel(Runtime.getRuntime().availableProcessors()).build();
+
+
 	}
 	@Bean
 	public Cache<String, User> userCache(){
 		return	CacheBuilder.newBuilder()
-		.expireAfterWrite(Duration.ofMinutes(15))
-		.concurrencyLevel(Runtime.getRuntime().availableProcessors()).build();
-		 
-		
+				.expireAfterWrite(Duration.ofMinutes(15))
+				.concurrencyLevel(Runtime.getRuntime().availableProcessors()).build();
+
+
 	}
 
 }
